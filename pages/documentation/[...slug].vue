@@ -20,10 +20,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="doc" class="prose dark:prose-invert max-w-none p-6">
-    <ContentRenderer :value="doc" />
-  </div>
-  <div v-else>
-    <p>Loading or not found...</p>
-  </div>
+    <UPageBody>
+      <ContentRenderer
+        v-if="doc"
+        :value="doc"
+      />
+    </UPageBody>
 </template>

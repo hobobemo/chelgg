@@ -23,5 +23,7 @@ export default defineNuxtConfig({
       discordSecret: process.env.NUXT_DISCORD_SECRET,
     },
   },
-
+  content: {
+    documentDriven: true
+  }
 })

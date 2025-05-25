@@ -1,13 +1,17 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
 
-// Turn ['getting-started'] into '/documentation/getting-started'
-const slugArray = Array.isArray(route.params.slug) ? route.params.slug : [route.params.slug]
+const slugArray = Array.isArray(route.params.slug)
+  ? route.params.slug
+  : [route.params.slug]
+
 const slugPath = `/documentation${slugArray.length ? '/' + slugArray.join('/') : ''}`
 
-const { data: docs } = await useAsyncData(() => queryCollection('content').path(slugPath).first())
+const asyncDoc = await useAsyncData(`doc-${slugPath}`, () =>
+  queryContent(slugPath).findOne()
+)
 
-console.log(docs);
+const doc = asyncDoc.data
 </script>
 
 <template>

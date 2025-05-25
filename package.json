@@ -18,6 +18,7 @@
     "@nuxt/ui-pro": "^3.1.2",
     "@nuxthub/core": "^0.8.27",
     "@pinia/nuxt": "^0.11.0",
+    "@tailwindcss/typography": "^0.5.16",
     "@vueuse/nuxt": "^13.2.0",
     "firebase": "^11.8.1",
     "nuxt": "^3.17.4",

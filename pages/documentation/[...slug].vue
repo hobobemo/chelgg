@@ -1,26 +1,26 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
 const route = useRoute()
 
-const slugArray = Array.isArray(route.params.slug)
-  ? route.params.slug
-  : [route.params.slug]
+const slug = Array.isArray(route.params.slug)
+  ? route.params.slug.join('/')
+  : route.params.slug || ''
 
-const slugPath = `/documentation${slugArray.length ? '/' + slugArray.join('/') : ''}`
+const fullPath = `/documentation/${slug}`
+const doc = ref(null)
 
-const asyncDoc = await useAsyncData(`doc-${slugPath}`, () =>
-  queryContent(slugPath).findOne()
-)
+onMounted(async () => {
+  const result = await queryCollection('documentation')
+    .path(fullPath)
+    .first()
 
-const doc = asyncDoc.data
+  doc.value = result
+})
 </script>
 
 <template>
-  <div v-if="doc">
-    <h1>{{ doc.title }}</h1>
-    <div v-html="doc.body" />
-  </div>
-  <div v-else>
-    <h1>404 - Page not found</h1>
-    <NuxtLink to="/">Go back home</NuxtLink>
+  <div v-if="doc" class="prose dark:prose-invert max-w-none">
+    <ContentRenderer :value="doc" />
   </div>
 </template>

@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+  ],
   modules: [
     '@nuxt/image',
     '@nuxt/icon',
@@ -23,7 +25,4 @@ export default defineNuxtConfig({
       discordSecret: process.env.NUXT_DISCORD_SECRET,
     },
   },
-  content: {
-    documentDriven: true
-  }
 })

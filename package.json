@@ -17,8 +17,8 @@
     "@nuxt/ui": "^3.1.2",
     "@nuxt/ui-pro": "^3.1.2",
     "@nuxthub/core": "^0.8.27",
+    "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "@pinia/nuxt": "^0.11.0",
-    "@tailwindcss/typography": "^0.5.16",
     "@vueuse/nuxt": "^13.2.0",
     "firebase": "^11.8.1",
     "nuxt": "^3.17.4",
@@ -31,6 +31,10 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.44",
-    "@iconify-json/material-symbols": "^1.2.21"
+    "@iconify-json/material-symbols": "^1.2.21",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7"
   }
 }

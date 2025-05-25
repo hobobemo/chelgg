@@ -1,9 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: [
-    '~/assets/css/main.css',
+    '@/assets/css/main.css',
   ],
   modules: [
     '@nuxt/image',
@@ -16,7 +17,15 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/ui-pro',
     '@nuxthub/core',
+    '@nuxtjs/tailwindcss',
   ],
+  ui: {
+    theme: {
+      extend: {
+        typography: true
+      }
+    }
+  },
   runtimeConfig: { 
     public: {
       BASE_URL: process.env.NUXT_BASE_URL,

@@ -1,8 +1,13 @@
 ---
 title: Getting Started
-description: This is the intro doc.
 ---
 
-# Getting Started
+# Heading Level 1
 
-Welcome to the documentation!
+This is a paragraph with **bold text** and *italic*.
+
+- List item 1
+- List item 2
+
+```js
+console.log('hello world')

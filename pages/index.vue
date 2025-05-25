@@ -7,7 +7,7 @@
         description: page.value.description,
         ogDescription: page.value.description
     });
-    
+
 </script>
 
 <template>

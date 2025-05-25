@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
     '@vueuse/nuxt',
-    '@nuxt/ui-pro'
+    '@nuxt/ui-pro',
+    '@nuxthub/core',
   ],
   runtimeConfig: { 
     public: {
